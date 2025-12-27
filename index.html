@@ -1,111 +1,101 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>哪吒元数据查询系统</title>
-    <style>
-        :root { --primary: #a52a2a; --bg: #fdfaf5; }
-        body { background: var(--bg); color: #333; font-family: "PingFang SC", serif; margin: 0; padding: 20px; }
-        
-        /* 搜索栏样式 */
-        .search-container {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            text-align: center;
+{
+  "subject": "哪吒文化演变全集",
+  "sources": [
+    {
+      "period": "早期佛教与密宗 (唐代及以前)",
+      "description": "哪吒作为佛教护法神“那吒”的起源阶段",
+      "items": [
+        {
+          "title": "《佛所行赞》",
+          "date": "约1-2世纪",
+          "key_event": "那吒诞生",
+          "role": "毗沙门天王之子",
+          "image": "七宝庄严，忿怒威严"
+        },
+        {
+          "title": "《北方毗沙门天王随军护法真言/仪轨》",
+          "date": "唐代",
+          "character_detail": "那吒太子，手持三戟槊（戟），恶眼看四方，足踏药叉女",
+          "personality": "护持国土，惩治恶人"
+        },
+        {
+          "title": "《毗沙门仪轨》",
+          "key_action": "捧塔随父",
+          "accessory": "塔"
         }
-        #searchInput {
-            width: 70%;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            outline: none;
-            transition: border-color 0.3s;
+      ]
+    },
+    {
+      "period": "禅宗公案与道教法术 (宋元时期)",
+      "description": "“剔骨还父”情节的起源与道教神将形象的确立",
+      "items": [
+        {
+          "title": "《景德传灯录》/《五灯会元》",
+          "date": "北宋/南宋",
+          "key_event": "析骨还父，肉身执着之破除",
+          "appearance": "三头六臂（或八臂）"
+        },
+        {
+          "title": "《道法会元》",
+          "role": "道教雷部神将",
+          "appearance_detail": "前髻后披发，皂衣赤脚，手持铁枪、铁剑、铁锁等"
         }
-        #searchInput:focus { border-color: var(--primary); }
-        .search-btn {
-            padding: 12px 25px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            margin-left: 10px;
+      ]
+    },
+    {
+      "period": "经典神魔文学 (明代)",
+      "description": "大众最熟知的哪吒形象定型期",
+      "items": [
+        {
+          "title": "《三教搜神大全》",
+          "theme": "反抗父权，灵珠子转世",
+          "accessories": ["乾坤圈", "混天绫", "火尖枪", "风火轮"]
+        },
+        {
+          "title": "《西游记》",
+          "event": "大战孙悟空",
+          "image": "三头六臂，身披铠甲"
+        },
+        {
+          "title": "《封神演义》",
+          "event": "闹海杀龙，莲花化身，伐纣建功",
+          "personality": "从叛逆到忠义的成长"
         }
-
-        /* 卡片样式 */
-        .container { max-width: 800px; margin: 0 auto; }
-        .card { background: white; border: 1px solid #e0e0e0; padding: 25px; margin-bottom: 25px; border-radius: 8px; transition: 0.3s; }
-        .card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .era { color: var(--primary); font-weight: bold; font-size: 0.9em; }
-        .name { font-size: 1.5em; margin: 10px 0; }
-        .desc { line-height: 1.7; color: #555; }
-        .meta-box { background: #f9f9f9; padding: 15px; margin-top: 15px; font-size: 0.85em; border-left: 3px solid #ccc; display: flex; gap: 20px; }
-        .highlight { color: var(--primary); font-weight: bold; }
-    </style>
-</head>
-<body>
-
-    <div class="search-container">
-        <h1>哪吒元数据学术查询</h1>
-        <input type="text" id="searchInput" placeholder="输入时代、地点或关键词（如：唐代、敦煌）...">
-        <button class="search-btn" onclick="performSearch()">查询</button>
-    </div>
-
-    <div class="container" id="app">正在加载馆藏数据...</div>
-
-    <script>
-        // 注意：请确保用户名正确
-        const BASE_URL = 'https://my-json-server.typicode.com/wanghashi525-eng/NeZha-APUI/nezha_versions';
-
-        // 初始加载
-        fetchData(BASE_URL);
-
-        // 搜索逻辑
-        function performSearch() {
-            const keyword = document.getElementById('searchInput').value;
-            const app = document.getElementById('app');
-            app.innerHTML = "正在检索中...";
-
-            // 如果有关键词，使用 ?q= 参数进行模糊查询
-            const finalUrl = keyword ? `${BASE_URL}?q=${encodeURIComponent(keyword)}` : BASE_URL;
-            fetchData(finalUrl);
+      ]
+    },
+    {
+      "period": "现代影视艺术 (1979-2019)",
+      "description": "现代价值观对哪吒精神的重塑",
+      "items": [
+        {
+          "title": "《哪吒闹海》(1979)",
+          "themes": ["为民牺牲", "反抗强权"],
+          "directors": ["王树忱", "严定宪", "徐景达"]
+        },
+        {
+          "title": "《莲花童子哪吒》(1999)",
+          "actor": "曹骏",
+          "personality": "从顽劣任性到成熟稳重"
+        },
+        {
+          "title": "《哪吒传奇》(2003)",
+          "relationships": "与小龙女为好友，对抗石矶娘娘"
+        },
+        {
+          "title": "《哪吒之魔童降世》(2019)",
+          "core_theme": "打破成见，“我命由我不由天”"
         }
-
-        // 监听回车键搜索
-        document.getElementById('searchInput').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') performSearch();
-        });
-
-        async function fetchData(url) {
-            try {
-                const res = await fetch(url);
-                const data = await res.json();
-                render(data);
-            } catch (err) {
-                document.getElementById('app').innerText = "查询出错，请稍后再试。";
-            }
-        }
-
-        function render(data) {
-            const app = document.getElementById('app');
-            if (data.length === 0) {
-                app.innerHTML = "<p style='text-align:center; color:#999;'>未找到相关元数据条目。</p>";
-                return;
-            }
-            app.innerHTML = data.map(item => `
-                <div class="card">
-                    <div class="era">【${item.era}】</div>
-                    <div class="name">${item.name}</div>
-                    <p class="desc">${item.description}</p>
-                    <div class="meta-box">
-                        <div><span style="color:#888">来源:</span> ${item.source || '学术记录'}</div>
-                        <div><span style="color:#888">ID:</span> <span class="highlight">${item.id}</span></div>
-                    </div>
-                </div>
-            `).join('');
-        }
-    </script>
-</body>
-</html>
+      ]
+    }
+  ],
+  "visual_resources": [
+    {
+      "type": "敦煌壁画",
+      "content": "莫高窟第288窟“毗沙门天王赴那吒会”"
+    },
+    {
+      "type": "敦煌绢画",
+      "content": "藏经洞出土唐代绢画中的哪吒形象"
+    }
+  ]
+}
