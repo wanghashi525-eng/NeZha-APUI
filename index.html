@@ -1,101 +1,127 @@
-{
-  "subject": "哪吒文化演变全集",
-  "sources": [
-    {
-      "period": "早期佛教与密宗 (唐代及以前)",
-      "description": "哪吒作为佛教护法神“那吒”的起源阶段",
-      "items": [
-        {
-          "title": "《佛所行赞》",
-          "date": "约1-2世纪",
-          "key_event": "那吒诞生",
-          "role": "毗沙门天王之子",
-          "image": "七宝庄严，忿怒威严"
-        },
-        {
-          "title": "《北方毗沙门天王随军护法真言/仪轨》",
-          "date": "唐代",
-          "character_detail": "那吒太子，手持三戟槊（戟），恶眼看四方，足踏药叉女",
-          "personality": "护持国土，惩治恶人"
-        },
-        {
-          "title": "《毗沙门仪轨》",
-          "key_action": "捧塔随父",
-          "accessory": "塔"
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>哪吒文化演变全集 - 交互查询系统</title>
+    <style>
+        :root { --main-red: #a52a2a; --bg-paper: #fdfaf5; }
+        body { background: var(--bg-paper); font-family: "PingFang SC", serif; padding: 20px; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* 搜索框 */
+        .search-section { text-align: center; margin-bottom: 40px; }
+        #searchInput { width: 60%; padding: 12px; border: 2px solid #ddd; border-radius: 25px; outline: none; }
+        #searchInput:focus { border-color: var(--main-red); }
+
+        /* 时期标题样式 */
+        .period-block { margin-bottom: 50px; }
+        .period-header { 
+            border-bottom: 3px solid var(--main-red); 
+            padding-bottom: 5px; 
+            margin-bottom: 20px;
         }
-      ]
-    },
-    {
-      "period": "禅宗公案与道教法术 (宋元时期)",
-      "description": "“剔骨还父”情节的起源与道教神将形象的确立",
-      "items": [
-        {
-          "title": "《景德传灯录》/《五灯会元》",
-          "date": "北宋/南宋",
-          "key_event": "析骨还父，肉身执着之破除",
-          "appearance": "三头六臂（或八臂）"
-        },
-        {
-          "title": "《道法会元》",
-          "role": "道教雷部神将",
-          "appearance_detail": "前髻后披发，皂衣赤脚，手持铁枪、铁剑、铁锁等"
+        .period-header h2 { color: var(--main-red); margin: 0; }
+        .period-desc { font-style: italic; color: #666; margin-top: 5px; }
+
+        /* 卡片网格 */
+        .items-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .item-card { 
+            background: #fff; border: 1px solid #eee; padding: 20px; 
+            border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
         }
-      ]
-    },
-    {
-      "period": "经典神魔文学 (明代)",
-      "description": "大众最熟知的哪吒形象定型期",
-      "items": [
-        {
-          "title": "《三教搜神大全》",
-          "theme": "反抗父权，灵珠子转世",
-          "accessories": ["乾坤圈", "混天绫", "火尖枪", "风火轮"]
-        },
-        {
-          "title": "《西游记》",
-          "event": "大战孙悟空",
-          "image": "三头六臂，身披铠甲"
-        },
-        {
-          "title": "《封神演义》",
-          "event": "闹海杀龙，莲花化身，伐纣建功",
-          "personality": "从叛逆到忠义的成长"
+        .item-title { font-weight: bold; font-size: 1.2em; color: #1a1a1a; margin-bottom: 10px; display: block; }
+        
+        /* 详细元数据 */
+        .detail-row { font-size: 0.9em; margin-bottom: 5px; }
+        .label { color: #999; font-weight: bold; margin-right: 5px; }
+        .tag { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+
+        #no-result { text-align: center; display: none; padding: 50px; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="search-section">
+        <h1>哪吒文化演变知识库</h1>
+        <input type="text" id="searchInput" placeholder="搜索关键词（如：三头六臂、唐代、封神）..." oninput="filterData()">
+    </div>
+
+    <div id="content-app">正在加载元数据...</div>
+    <div id="no-result">未找到相关历史记录</div>
+</div>
+
+<script>
+    // 你的 API 地址
+    const API_URL = 'https://my-json-server.typicode.com/wanghashi525-eng/NeZha-APUI/db';
+    let originalData = null;
+
+    async function init() {
+        try {
+            const res = await fetch(API_URL);
+            const data = await res.json();
+            // 注意：my-json-server 的 db 路径会返回整个对象
+            originalData = data.sources; 
+            render(originalData);
+        } catch (e) {
+            document.getElementById('content-app').innerText = "数据获取失败，请检查 db.json 格式";
         }
-      ]
-    },
-    {
-      "period": "现代影视艺术 (1979-2019)",
-      "description": "现代价值观对哪吒精神的重塑",
-      "items": [
-        {
-          "title": "《哪吒闹海》(1979)",
-          "themes": ["为民牺牲", "反抗强权"],
-          "directors": ["王树忱", "严定宪", "徐景达"]
-        },
-        {
-          "title": "《莲花童子哪吒》(1999)",
-          "actor": "曹骏",
-          "personality": "从顽劣任性到成熟稳重"
-        },
-        {
-          "title": "《哪吒传奇》(2003)",
-          "relationships": "与小龙女为好友，对抗石矶娘娘"
-        },
-        {
-          "title": "《哪吒之魔童降世》(2019)",
-          "core_theme": "打破成见，“我命由我不由天”"
-        }
-      ]
     }
-  ],
-  "visual_resources": [
-    {
-      "type": "敦煌壁画",
-      "content": "莫高窟第288窟“毗沙门天王赴那吒会”"
-    },
-    {
-      "type": "敦煌绢画",
-      "content": "藏经洞出土唐代绢画中的哪吒形象"
+
+    function render(sources) {
+        const app = document.getElementById('content-app');
+        app.innerHTML = '';
+        
+        sources.forEach(source => {
+            const section = document.createElement('div');
+            section.className = 'period-block';
+            
+            // 构建作品卡片
+            const cardsHtml = source.items.map(item => `
+                <div class="item-card">
+                    <span class="item-title">${item.title}</span>
+                    ${item.date ? `<div class="detail-row"><span class="label">时期:</span>${item.date}</div>` : ''}
+                    ${item.key_event ? `<div class="detail-row"><span class="label">关键事件:</span>${item.key_event}</div>` : ''}
+                    ${item.character_detail ? `<div class="detail-row"><span class="label">形象描述:</span>${item.character_detail}</div>` : ''}
+                    ${item.personality ? `<div class="detail-row"><span class="label">性格:</span>${item.personality}</div>` : ''}
+                    ${item.core_theme ? `<div class="detail-row"><span class="label">核心精神:</span><span class="tag">${item.core_theme}</span></div>` : ''}
+                </div>
+            `).join('');
+
+            section.innerHTML = `
+                <div class="period-header">
+                    <h2>${source.period}</h2>
+                    <div class="period-desc">${source.description}</div>
+                </div>
+                <div class="items-grid">${cardsHtml}</div>
+            `;
+            app.appendChild(section);
+        });
     }
-  ]
-}
+
+    // 实现本地快速查询
+    function filterData() {
+        const keyword = document.getElementById('searchInput').value.toLowerCase();
+        if (!originalData) return;
+
+        const filtered = originalData.map(source => {
+            const matchedItems = source.items.filter(item => 
+                JSON.stringify(item).toLowerCase().includes(keyword)
+            );
+            return { ...source, items: matchedItems };
+        }).filter(source => source.items.length > 0);
+
+        if (filtered.length === 0) {
+            document.getElementById('no-result').style.display = 'block';
+            document.getElementById('content-app').style.display = 'none';
+        } else {
+            document.getElementById('no-result').style.display = 'none';
+            document.getElementById('content-app').style.display = 'block';
+            render(filtered);
+        }
+    }
+
+    init();
+</script>
+</body>
+</html>
