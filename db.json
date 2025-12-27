@@ -1,25 +1,17 @@
 {
   "nezha_versions": [
     {
-      "id": 1,
-      "name": "《佛所行赞》那罗延",
-      "era": "古印度 (1-2世纪)",
-      "description": "哪吒原型那罗延天在早期佛教经典中的呈现。",
-      "source": "马鸣菩萨造，昙无谶译"
+      "id": "work_1",
+      "name": "《佛所行赞》",
+      "era": "古印度",
+      "author": "昙无谶译",
+      "description": "哪吒原型那罗延天在早期佛教经典中的呈现。"
     },
     {
-      "id": 2,
-      "name": "莫高窟288窟壁画",
+      "id": "work_dunhuang_288",
+      "name": "敦煌莫高窟288窟",
       "era": "北魏",
-      "description": "毗沙门天王赴那吒会，展示了哪吒作为天王之子的早期职能。",
-      "source": "敦煌莫高窟"
-    },
-    {
-      "id": 3,
-      "name": "藏经洞出土绢画",
-      "era": "唐代",
-      "description": "大英博物馆馆藏 Stein painting 1，展示了唐代精细的哪吒造像。",
-      "source": "大英博物馆"
+      "description": "毗沙门天王赴那吒会壁画。"
     }
   ]
 }
