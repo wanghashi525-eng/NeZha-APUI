@@ -84,73 +84,132 @@
 </div>
 
 <script>
-    // 
-    const API_URL = 'https://my-json-server.typicode.com/wanghashi525-eng/NeZha-APUI/works';
-    let allWorks = [];
-    let currentFilter = 'All';
+ // 
+const API_URL = 'https://raw.githubusercontent.com/wanghashi525-eng/NeZha-APUI/main/db.json';
 
-    async function fetchData() {
-        try {
-            const res = await fetch(API_URL);
-            allWorks = await res.json();
-            render(allWorks);
-        } catch (err) {
-            document.getElementById('gallery').innerText = "加载失败，请检查 db.json 是否部署。";
-        }
-    }
+let allWorks = [];
+let currentFilter = 'All';
 
-    function setFilter(type, btn) {
-        currentFilter = type;
-        document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        filterWorks();
-    }
+// 2. 核心数据加载函数
+async function fetchData() {
+    const gallery = document.getElementById('gallery');
+    const loading = document.getElementById('loading');
 
-    function filterWorks() {
-        const keyword = document.getElementById('searchInput').value.toLowerCase();
+    try {
+        // 直接从 GitHub 获取原始 JSON 文件
+        const response = await fetch(API_URL);
         
-        const filtered = allWorks.filter(item => {
-            const matchesType = currentFilter === 'All' || item.type === currentFilter;
-            const matchesKeyword = JSON.stringify(item).toLowerCase().includes(keyword);
-            return matchesType && matchesKeyword;
-        });
+        if (!response.ok) {
+            throw new Error(`服务器响应异常: ${response.status}`);
+        }
 
-        render(filtered);
-        document.getElementById('empty-state').style.display = filtered.length === 0 ? 'block' : 'none';
-    }
+        const data = await response.json();
 
-    function render(data) {
-        const gallery = document.getElementById('gallery');
-        gallery.innerHTML = data.map(item => {
-            // 提取叙事信息，兼容单对象和多对象结构
-            const narrative = item.narratives ? Object.values(item.narratives)[0] : item.narrative;
-            
-            return `
-                <div class="card">
-                    <span class="type-tag">${item.type}</span>
-                    <div class="period">${item.period}</div>
-                    <div class="title">${item.title}</div>
-                    
-                    <div class="info-section">
-                        <div><span class="label">创作者:</span>${item.creator?.name || '佚名'}</div>
-                        ${item.manifestation?.edition ? `<div><span class="label">版本:</span>${item.manifestation.edition}</div>` : ''}
-                        <div><span class="label">载体形式:</span>${item.form}</div>
-                    </div>
+        // 兼容性处理：如果数据在 works 字段下则取 works，否则取 data 本身
+        allWorks = data.works ? data.works : data;
 
-                    <div class="narrative-box">
-                        <span class="narrative-title">◈ ${narrative?.name || '核心表现'}</span>
-                        <div style="font-size: 0.85em;">${narrative?.core_theme || ''}</div>
-                        ${narrative?.appearance_nezha?.depiction || narrative?.appearance_liyunxiang?.depiction ? 
-                            `<div class="appearance">【像】${narrative?.appearance_nezha?.depiction || narrative?.appearance_liyunxiang?.depiction}</div>` : ''}
-                    </div>
+        // 隐藏加载提示
+        if(loading) loading.style.display = 'none';
+        
+        // 执行第一次渲染
+        render(allWorks);
 
-                    ${narrative?.character_nezha?.homepage ? `<a href="${narrative.character_nezha.homepage}" target="_blank" class="link-btn">查看百度百科词条 →</a>` : ''}
+    } catch (error) {
+        console.error("加载失败详情:", error);
+        if(loading) {
+            loading.innerHTML = `
+                <div style="color: #a52a2a; padding: 20px; border: 1px solid #ddd;">
+                    <h3>数据开启失败</h3>
+                    <p>原因: ${error.message}</p>
+                    <p style="font-size: 0.8em; color: #666;">请确保 db.json 已上传至 main 分支且格式正确</p>
                 </div>
             `;
-        }).join('');
+        }
     }
+}
 
-    fetchData();
+// 3. 搜索与过滤逻辑
+function setFilter(type, btn) {
+    currentFilter = type;
+    // 切换按钮高亮状态
+    document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterWorks();
+}
+
+function filterWorks() {
+    const keyword = document.getElementById('searchInput').value.toLowerCase();
+    
+    const filtered = allWorks.filter(item => {
+        // 类别过滤
+        const matchesType = (currentFilter === 'All' || item.type === currentFilter);
+        
+        // 关键词搜索（在标题、年代、描述中搜索）
+        const itemString = JSON.stringify(item).toLowerCase();
+        const matchesKeyword = itemString.includes(keyword);
+        
+        return matchesType && matchesKeyword;
+    });
+
+    render(filtered);
+    
+    // 处理空结果
+    const emptyState = document.getElementById('empty-state');
+    if(emptyState) {
+        emptyState.style.display = filtered.length === 0 ? 'block' : 'none';
+    }
+}
+
+// 4. 渲染函数（专门适配你复杂的 JSON 结构）
+function render(data) {
+    const gallery = document.getElementById('gallery');
+    if (!gallery) return;
+
+    gallery.innerHTML = data.map(item => {
+        // 自动识别你的多层级叙事结构 (narrative 或 narratives)
+        let narrative = {};
+        if (item.narratives) {
+            // 如果是复数形式，取第一个叙事点
+            narrative = Object.values(item.narratives)[0];
+        } else if (item.narrative) {
+            narrative = item.narrative;
+        }
+
+        // 提取哪吒的外貌描述（兼容多个字段名）
+        const appearance = narrative?.appearance_nezha?.depiction || 
+                           narrative?.appearance_liyunxiang?.depiction || 
+                           "暂无详细形象描述";
+
+        // 提取创作者姓名
+        const creatorName = item.creator?.name || "佚名";
+
+        return `
+            <div class="card">
+                <span class="type-tag">${item.type}</span>
+                <div class="period">${item.period || '未知年代'}</div>
+                <div class="title">${item.title}</div>
+                
+                <div class="info-section">
+                    <div><span class="label">创作者:</span>${creatorName}</div>
+                    ${item.form ? `<div><span class="label">载体:</span>${item.form}</div>` : ''}
+                    ${item.manifestation?.edition ? `<div><span class="label">文献本:</span>${item.manifestation.edition}</div>` : ''}
+                </div>
+
+                <div class="narrative-box">
+                    <span class="narrative-title">◈ ${narrative?.name || '核心意旨'}</span>
+                    <div style="font-size: 0.85em; color: #444;">${narrative?.core_theme || '点击查看详情'}</div>
+                    <div class="appearance">【特征】${appearance}</div>
+                </div>
+
+                ${narrative?.character_nezha?.homepage ? 
+                    `<a href="${narrative.character_nezha.homepage}" target="_blank" class="link-btn">参考馆藏词条 →</a>` : ''}
+            </div>
+        `;
+    }).join('');
+}
+
+// 5. 启动加载
+fetchData();
 </script>
 </body>
 </html>
