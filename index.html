@@ -6,113 +6,90 @@
     <title>哪吒演变全景元数据知识库</title>
     <style>
         :root { 
-            --gold: #d4af37; 
-            --ink: #1a1a1a; 
-            --paper: #f4f1ea; 
-            --accent-red: #a52a2a; 
-            --box-bg: #fdfaf5;
+            --gold: #d4af37; --ink: #1a1a1a; --paper: #f4f1ea; 
+            --accent-red: #a52a2a; --box-bg: #fdfaf5;
         }
 
         body { 
-            background: var(--paper); 
-            font-family: "PingFang SC", "STSong", "SimSun", serif; 
+            background: var(--paper); font-family: "PingFang SC", "Microsoft YaHei", serif; 
             margin: 0; color: var(--ink); line-height: 1.6; 
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-        /* 头部装饰 */
+        /* Header */
         header { 
-            text-align: center; 
-            border-bottom: 3px double var(--gold); 
-            margin-bottom: 40px; padding-bottom: 20px; 
+            text-align: center; border-bottom: 3px double var(--gold); 
+            margin-bottom: 30px; padding-bottom: 20px; 
         }
-        h1 { font-size: 2.8em; color: var(--accent-red); margin: 10px 0; font-family: "STSong", serif; }
-        .subtitle { letter-spacing: 2px; color: #666; font-size: 0.9em; }
+        h1 { font-size: 2.5em; color: var(--accent-red); margin: 10px 0; }
+        .subtitle { letter-spacing: 2px; color: #666; font-size: 0.9em; text-transform: uppercase; }
 
-        /* 搜索区域 */
-        .search-section { 
+        /* Search & Filter */
+        .controls { 
             background: white; padding: 20px; border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 30px;
             position: sticky; top: 10px; z-index: 100; border: 1px solid var(--gold);
+            display: flex; flex-direction: column; gap: 15px;
         }
-        .search-box { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
         #searchInput { 
-            flex: 1; min-width: 300px; padding: 12px 20px; 
-            border: 2px solid #ddd; border-radius: 4px; font-size: 16px; outline: none;
+            padding: 12px; border: 2px solid #eee; border-radius: 4px; font-size: 16px; 
         }
-        #searchInput:focus { border-color: var(--gold); }
         .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
-        
         .btn { 
-            padding: 10px 18px; cursor: pointer; border: 1px solid #ddd; 
-            background: #f9f9f9; transition: 0.3s; border-radius: 4px; font-size: 0.9em;
+            padding: 8px 15px; cursor: pointer; border: 1px solid #ddd; 
+            background: white; border-radius: 4px; transition: 0.2s;
         }
-        .btn:hover { background: #eee; }
         .btn.active { background: var(--accent-red); color: white; border-color: var(--accent-red); }
 
-        /* 内容布局 */
-        #gallery { display: grid; grid-template-columns: 1fr; gap: 40px; }
-
-        /* 深度详细卡片设计 */
+        /* Card Design */
+        #gallery { display: grid; grid-template-columns: 1fr; gap: 30px; }
         .card { 
-            background: white; border: 1px solid #e0d8c8; border-top: 6px solid var(--accent-red);
-            border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            background: white; border-radius: 8px; border-top: 5px solid var(--accent-red);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden;
         }
+        .card-header { padding: 20px 25px; background: #fdfaf5; border-bottom: 1px solid #eee; }
+        .type-tag { float: right; background: var(--gold); color: white; padding: 2px 8px; font-size: 12px; border-radius: 3px; }
+        .period-text { color: #888; font-size: 0.9em; font-weight: bold; }
+        .work-title { font-size: 1.8em; margin: 10px 0; color: var(--ink); }
 
-        .card-header { padding: 25px 30px 15px; background: linear-gradient(to bottom, #fff, #fdfaf5); }
-        .type-tag { 
-            background: var(--gold); color: white; padding: 3px 10px; 
-            font-size: 0.75em; border-radius: 3px; float: right; 
+        .card-body { padding: 25px; }
+
+        /* Meta Info Grid */
+        .meta-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 10px; margin-bottom: 20px; font-size: 0.9em; color: #555;
         }
-        .period-label { color: #888; font-size: 0.95em; font-weight: bold; }
-        .main-title { font-size: 2.2em; color: var(--ink); margin: 10px 0; font-family: "STSong", serif; }
+        .meta-item b { color: var(--ink); margin-right: 5px; }
 
-        .content-body { padding: 0 30px 30px; }
-
-        /* 元数据网格 */
-        .metadata-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 15px; background: #f9f9f9; padding: 20px; border-radius: 6px; margin-bottom: 25px;
+        /* Narrative Section */
+        .narrative-block { 
+            border-left: 3px solid var(--gold); padding-left: 20px; 
+            margin: 20px 0; background: #fafafa; padding: 15px; border-radius: 0 5px 5px 0;
         }
-        .meta-item { font-size: 0.92em; }
-        .meta-item strong { color: #555; margin-right: 5px; }
-
-        /* 标签设计 */
-        .character-zone { margin-bottom: 20px; }
-        .tag-char { 
-            display: inline-block; background: #eee; color: #444; 
-            padding: 3px 12px; border-radius: 15px; font-size: 0.82em; 
-            margin: 0 8px 8px 0; border: 1px solid #ddd;
-        }
-
-        /* 叙事段落 */
-        .narrative-segment { 
-            border-left: 4px solid var(--gold); padding-left: 20px; 
-            margin-top: 25px; margin-bottom: 35px;
-        }
-        .segment-name { font-size: 1.2em; color: var(--accent-red); font-weight: bold; margin-bottom: 10px; }
-        .segment-meta { font-size: 0.9em; color: #666; margin-bottom: 10px; display: grid; gap: 5px; }
+        .narrative-name { font-weight: bold; color: var(--accent-red); font-size: 1.1em; margin-bottom: 8px; }
         
-        /* 外观档案盒 */
-        .appearance-box { 
-            background: #fffdf2; border: 1px solid #f0e68c; 
-            padding: 15px; border-radius: 4px; margin-top: 15px;
+        /* Appearance Box */
+        .app-box { 
+            margin-top: 10px; padding: 12px; background: white; 
+            border: 1px solid #e0d8c8; border-radius: 4px; font-size: 0.9em;
         }
-        .appearance-box h4 { margin: 0 0 8px 0; font-size: 0.95em; color: #8b4513; border-bottom: 1px solid #eee; }
-        .app-detail { font-size: 0.88em; margin: 4px 0; color: #444; }
-        .tag-accessory { color: var(--accent-red); font-weight: bold; }
+        .app-tag { color: var(--accent-red); font-weight: bold; }
+
+        /* Character Tags */
+        .char-tags { margin: 10px 0; }
+        .tag { 
+            display: inline-block; background: #eee; padding: 2px 10px; 
+            border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 5px; 
+        }
 
         .footer-link { 
-            text-align: center; background: #f4f4f4; padding: 15px; 
-            text-decoration: none; color: #666; font-size: 0.9em; transition: 0.3s;
-            border-top: 1px solid #eee;
+            display: block; text-align: center; padding: 12px; background: #f9f9f9;
+            text-decoration: none; color: #777; font-size: 0.85em; border-top: 1px solid #eee;
         }
         .footer-link:hover { background: var(--accent-red); color: white; }
 
-        #loading, #empty-state { text-align: center; padding: 100px; font-size: 1.2em; color: #999; }
-        hr { border: 0; border-top: 1px double var(--gold); margin: 30px 0; }
+        #loading { text-align: center; padding: 50px; font-style: italic; color: #999; }
     </style>
 </head>
 <body>
@@ -120,47 +97,37 @@
 <div class="container">
     <header>
         <h1>哪吒演变全景元数据知识库</h1>
-        <p class="subtitle">NEZHA EVOLUTION METADATA REPOSITORY</p>
+        <p class="subtitle">NEZHA Evolution Metadata Repository</p>
     </header>
 
-    <div class="search-section">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="搜索作品、人物、法宝、性格或描述关键词..." oninput="filterWorks()">
-            <div class="filter-group">
-                <button class="btn active" onclick="setFilter('All', this)">全部</button>
-                <button class="btn" onclick="setFilter('AncientBook', this)">古籍文献</button>
-                <button class="btn" onclick="setFilter('Film', this)">影视动画</button>
-                <button class="btn" onclick="setFilter('PhysicalWork', this)">壁画实物</button>
-            </div>
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="搜索作品、人物、性格、法宝或关键词..." oninput="filterWorks()">
+        <div class="filter-group">
+            <button class="btn active" onclick="setFilter('All', this)">全部类型</button>
+            <button class="btn" onclick="setFilter('AncientBook', this)">古籍文献</button>
+            <button class="btn" onclick="setFilter('Film', this)">影视动画</button>
+            <button class="btn" onclick="setFilter('PhysicalWork', this)">壁画实物</button>
         </div>
     </div>
 
-    <div id="loading">📜 正在翻阅卷轴，请稍候...</div>
+    <div id="loading">📜 正在调取卷轴数据...</div>
     <div id="gallery"></div>
-    <div id="empty-state" style="display:none;">未能找到相关哪吒文化记录</div>
 </div>
 
 <script>
-    // 方案二：直接使用 GitHub Raw 链接，绕过大小限制
     const API_URL = 'https://raw.githubusercontent.com/wanghashi525-eng/NeZha-APUI/main/db.json';
-    
     let allWorks = [];
     let currentFilter = 'All';
 
-    async function fetchData() {
+    async function init() {
         try {
-            const res = await fetch(API_URL);
-            if (!res.ok) throw new Error('读取数据失败');
-            const data = await res.json();
-            
-            // 兼容 {"works": []} 结构
-            allWorks = data.works || data;
-            
+            const response = await fetch(API_URL);
+            const data = await response.json();
+            allWorks = data.works || [];
             document.getElementById('loading').style.display = 'none';
             render(allWorks);
-        } catch (err) {
-            document.getElementById('loading').innerHTML = "❌ 数据加载失败，请检查 GitHub 地址或 JSON 格式。";
-            console.error(err);
+        } catch (e) {
+            document.getElementById('loading').innerText = "❌ 加载失败，请检查数据源。";
         }
     }
 
@@ -172,102 +139,97 @@
     }
 
     function filterWorks() {
-        const keyword = document.getElementById('searchInput').value.toLowerCase();
-        const filtered = allWorks.filter(item => {
-            const matchesType = currentFilter === 'All' || item.type === currentFilter;
-            const itemString = JSON.stringify(item).toLowerCase();
-            return matchesType && itemString.includes(keyword);
+        const kw = document.getElementById('searchInput').value.toLowerCase();
+        const filtered = allWorks.filter(w => {
+            const matchesType = currentFilter === 'All' || w.type === currentFilter;
+            const matchesSearch = JSON.stringify(w).toLowerCase().includes(kw);
+            return matchesType && matchesSearch;
         });
         render(filtered);
-        document.getElementById('empty-state').style.display = filtered.length === 0 ? 'block' : 'none';
     }
 
     function render(data) {
-        const gallery = document.getElementById('gallery');
-        gallery.innerHTML = data.map(item => {
+        const container = document.getElementById('gallery');
+        container.innerHTML = data.map(work => {
             
-            // 1. 处理叙事数据（支持 narrative 或 narratives 多场景）
-            const narratives = item.narratives ? Object.values(item.narratives) : (item.narrative ? [item.narrative] : []);
-            
-            // 2. 自动化提取所有涉及角色
-            let chars = [];
-            narratives.forEach(n => {
-                Object.keys(n).forEach(key => {
-                    if(key.startsWith('character_') && n[key].name) chars.push(n[key].name);
-                });
-            });
-            const uniqueChars = [...new Set(chars)];
+            // --- 1. 核心叙事逻辑适配 (处理叙事对象/数组) ---
+            let narrativeList = [];
+            if (work.narratives) {
+                // 如果是数组，直接用；如果是对象（如新神榜），转为数组
+                narrativeList = Array.isArray(work.narratives) ? work.narratives : Object.values(work.narratives);
+            } else if (work.narrative) {
+                narrativeList = [work.narrative];
+            }
 
-            // 3. 生成叙事与形象 HTML
-            const narrativeHtml = narratives.map(n => {
-                const app = n.appearance_nezha || n.appearance_liyunxiang || n.appearance_liyunxiang_18 || {};
+            // --- 2. 叙事HTML生成 ---
+            const narrativesHtml = narrativeList.map(n => {
+                // 自动提取该叙事下的所有人物名
+                let charNames = [];
+                // 适配旧版 character_xxx
+                Object.keys(n).forEach(key => { if(key.startsWith('character_') && n[key].name) charNames.push(n[key].name); });
+                // 适配新版 characters 数组
+                if(n.characters) n.characters.forEach(c => charNames.push(c.name));
+                const uniqueChars = [...new Set(charNames)];
+
+                // 适配旧版 appearance_xxx 或新版 appearances 数组
+                let apps = [];
+                Object.keys(n).forEach(key => { if(key.startsWith('appearance_')) apps.push(n[key]); });
+                if(n.appearances) apps = apps.concat(n.appearances);
+
                 return `
-                    <div class="narrative-segment">
-                        <div class="segment-name">◈ ${n.name || '核心场景'}</div>
-                        <div class="segment-meta">
-                            ${n.location ? `<span><strong>地点:</strong> ${n.location}</span>` : ''}
-                            ${n.core_theme ? `<span><strong>核心主题:</strong> ${n.core_theme}</span>` : ''}
-                            ${n.relationship_outcome ? `<span><strong>关系变迁:</strong> ${n.relationship_outcome}</span>` : ''}
+                    <div class="narrative-block">
+                        <div class="narrative-name">◈ ${n.name || '核心情节'}</div>
+                        <div style="font-size:0.85em; color:#666; margin-bottom:8px;">
+                            ${n.location ? `📍 ${n.location}` : ''} 
+                            ${n.core_theme ? ` | 🏷️ ${n.core_theme}` : ''}
                         </div>
                         
-                        ${app.depiction || app.personality || app.signature_accessory ? `
-                            <div class="appearance-box">
-                                <h4>🎭 形象与特质档案</h4>
-                                ${app.depiction ? `<p class="app-detail"><strong>视觉描述:</strong> ${app.depiction}</p>` : ''}
-                                ${app.signature_accessory ? `<p class="app-detail"><strong>法宝武器:</strong> <span class="tag-accessory">${app.signature_accessory}</span></p>` : ''}
-                                ${app.personality ? `<p class="app-detail"><strong>性格特质:</strong> ${app.personality}</p>` : ''}
-                                ${app.battle_form ? `<p class="app-detail"><strong>战斗形态:</strong> ${app.battle_form}</p>` : ''}
-                                ${app.character_arc ? `<p class="app-detail"><strong>角色弧光:</strong> ${app.character_arc}</p>` : ''}
+                        <div class="char-tags">
+                            ${uniqueChars.map(c => `<span class="tag">${c}</span>`).join('')}
+                        </div>
+
+                        ${apps.map(a => `
+                            <div class="app-box">
+                                ${a.depiction ? `<div><b>描述:</b> ${a.depiction}</div>` : ''}
+                                ${a.signature_accessory ? `<div><b>法宝武器:</b> <span class="app-tag">${Array.isArray(a.signature_accessory) ? a.signature_accessory.join('、') : a.signature_accessory}</span></div>` : ''}
+                                ${a.personality ? `<div><b>性格特质:</b> ${a.personality}</div>` : ''}
+                                ${a.battle_form ? `<div><b>战斗形态:</b> ${a.battle_form}</div>` : ''}
                             </div>
-                        ` : ''}
+                        `).join('')}
+                        
+                        ${n.relationship_outcome ? `<div style="font-size:0.85em; margin-top:8px; color:#a52a2a;"><b>关系变迁:</b> ${n.relationship_outcome}</div>` : ''}
                     </div>
                 `;
             }).join('');
 
-            // 4. 返回完整卡片
+            // --- 3. 基础卡片框架 ---
             return `
                 <div class="card">
                     <div class="card-header">
-                        <span class="type-tag">${item.type}</span>
-                        <div class="period-label">⏳ ${item.period}</div>
-                        <div class="main-title">${item.title}</div>
+                        <span class="type-tag">${work.type}</span>
+                        <div class="period-text">${work.period}</div>
+                        <div class="work-title">${work.title}</div>
                     </div>
-
-                    <div class="content-body">
-                        <div class="metadata-grid">
-                            <div class="meta-item"><strong>创作者:</strong> ${item.creator?.name || '佚名'} (${item.creator?.role || '作者'})</div>
-                            ${item.contributor ? `<div class="meta-item"><strong>辅助/译者:</strong> ${item.contributor.name}</div>` : ''}
-                            <div class="meta-item"><strong>表现形式:</strong> ${item.form}</div>
-                            ${item.manifestation ? `
-                                <div class="meta-item" style="grid-column: 1/-1; border-top: 1px dashed #ddd; padding-top: 10px;">
-                                    <strong>版本记录:</strong> ${item.manifestation.edition} 
-                                    <span style="color:#999; font-size:0.9em;">(${item.manifestation.publication_period || ''})</span>
-                                </div>
-                            ` : ''}
+                    <div class="card-body">
+                        <div class="meta-grid">
+                            <div class="meta-item"><b>创作者:</b> ${work.creator?.name || work.people?.creator?.name || '未知'}</div>
+                            <div class="meta-item"><b>形式:</b> ${work.form}</div>
+                            ${work.manifestation?.edition ? `<div class="meta-item"><b>版本:</b> ${work.manifestation.edition}</div>` : ''}
                         </div>
-
-                        ${uniqueChars.length > 0 ? `
-                            <div class="character-zone">
-                                ${uniqueChars.map(c => `<span class="tag-char">${c}</span>`).join('')}
-                            </div>
-                        ` : ''}
-
+                        
                         <div class="narrative-area">
-                            ${narrativeHtml}
+                            ${narrativesHtml}
                         </div>
                     </div>
-
-                    ${narratives[0]?.character_nezha?.homepage ? `
-                        <a href="${narratives[0].character_nezha.homepage}" target="_blank" class="footer-link">
-                            查看《${item.title}》哪吒条目详细资料 →
-                        </a>
+                    ${(work.narrative?.character_nezha?.homepage || narrativeList[0]?.characters?.[0]?.homepage) ? `
+                        <a href="${work.narrative?.character_nezha?.homepage || narrativeList[0]?.characters?.[0]?.homepage}" target="_blank" class="footer-link">查看人物百科全书详情 →</a>
                     ` : ''}
                 </div>
             `;
         }).join('');
     }
 
-    fetchData();
+    init();
 </script>
 
 </body>
