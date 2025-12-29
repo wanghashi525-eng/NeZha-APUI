@@ -799,5 +799,969 @@
         }
       }
     }
+{
+      "id": "work_10",
+      "type": "AncientBook",
+      "title": "《二郎神醉射锁魔镜》",
+      "period": "元代",
+      "form": "元杂剧文本",
+      "people": {
+        "creator": {
+          "id": "person_anonymous_yuan",
+          "name": "元代无名氏",
+          "role": "作者"
+        }
+      },
+      "narratives": [
+        {
+          "id": "narrative_10",
+          "name": "助战二郎神降魔",
+          "location": "锁魔镜场景/天庭",
+          "core_theme": "协同护法，降妖除魔",
+          "relationship_outcome": "那吒与二郎神：战友协作关系",
+          "characters": [
+            {
+              "id": "character_nezha_10",
+              "name": "那吒",
+              "nicknames": ["哪吒三太子"],
+              "type": "天庭神将、少年英雄",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            }
+          ],
+          "appearances": [
+            {
+              "id": "appearance_nezha_10",
+              "character_id": "character_nezha_10",
+              "depiction": "少年武将扮相，手持火尖枪，身披铠甲",
+              "signature_accessory": ["火尖枪", "乾坤圈"],
+              "personality": "勇猛好战、果敢坚毅"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work_11",
+      "type": "AncientBook",
+      "title": "《三教搜神大全》",
+      "period": "明代",
+      "form": "神仙谱系类典籍",
+      "people": {
+        "creator": {
+          "id": "person_anonymous_ming",
+          "name": "明代无名氏",
+          "role": "作者"
+        }
+      },
+      "manifestations": [
+        {
+          "id": "manifestation_11",
+          "edition": "明代刊本",
+          "publication_period": "明代"
+        }
+      ],
+      "narratives": [
+        {
+          "id": "narrative_11",
+          "name": "剔骨还父、割肉还母",
+          "location": "陈塘关",
+          "core_theme": "反抗父权，重塑自我",
+          "relationship_outcome": "那吒与李靖：父子关系破裂后重塑（莲花身）",
+          "characters": [
+            {
+              "id": "character_nezha_11",
+              "name": "那吒",
+              "nicknames": ["灵珠子", "三太子"],
+              "type": "灵珠子转世、少年神祇",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            },
+            {
+              "id": "character_lijing_11",
+              "name": "李靖",
+              "type": "哪吒之父"
+            }
+          ],
+          "appearances": [
+            {
+              "id": "appearance_nezha_11",
+              "character_id": "character_nezha_11",
+              "depiction": "三头六臂，莲花化身，手持诸般神器",
+              "signature_accessory": ["乾坤圈", "混天绫", "火尖枪", "风火轮"],
+              "personality": "刚烈叛逆、至孝与反抗交织"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work_12",
+      "type": "AncientBook",
+      "title": "《西游记》",
+      "period": "明代",
+      "form": "章回体神魔小说",
+      "people": {
+        "creator": {
+          "id": "person_wuchengen",
+          "name": "吴承恩",
+          "role": "作者"
+        }
+      },
+      "manifestations": [
+        {
+          "id": "manifestation_12",
+          "edition": "现代彩绘本",
+          "publication_period": "现代"
+        }
+      ],
+      "narratives": [
+        {
+          "id": "narrative_12",
+          "name": "大战孙悟空",
+          "location": "花果山/天庭",
+          "core_theme": "天庭执法，对战妖猴",
+          "relationship_outcome": "那吒与孙悟空：敌对交战关系",
+          "characters": [
+            {
+              "id": "character_nezha_12",
+              "name": "那吒",
+              "nicknames": ["三太子"],
+              "type": "天庭神将、托塔李天王之子",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            },
+            {
+              "id": "character_sunwukong_12",
+              "name": "孙悟空",
+              "type": "齐天大圣、妖猴"
+            }
+          ],
+          "appearances": [
+            {
+              "id": "appearance_nezha_12",
+              "character_id": "character_nezha_12",
+              "depiction": "三头六臂，身披铠甲，手持火尖枪、乾坤圈",
+              "signature_accessory": ["乾坤圈", "火尖枪", "风火轮"],
+              "personality": "刚直职守、不服输的争强好胜"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work_13",
+      "type": "AncientBook",
+      "title": "《封神演义》",
+      "period": "明代",
+      "form": "章回体封神题材小说",
+      "people": {
+        "creator": {
+          "id": "person_xushenling",
+          "name": "许仲琳",
+          "role": "作者"
+        }
+      },
+      "manifestations": [
+        {
+          "id": "manifestation_13",
+          "edition": "明代刊本",
+          "publication_period": "明代"
+        }
+      ],
+      "narratives": [
+        {
+          "id": "narrative_nezha_birth_13",
+          "name": "灵珠子转世陈塘关",
+          "location": "陈塘关李靖府邸",
+          "core_theme": "天命降生、神圣转世",
+          "relationship_outcome": "李靖夫妇得子，灵珠子化身为哪吒",
+          "characters": [
+            {
+              "id": "character_nezha_13",
+              "name": "那吒",
+              "nicknames": ["灵珠子", "三坛海会大神"],
+              "type": "灵珠子转世、伐纣先锋官",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            },
+            {
+              "id": "character_lijing_13",
+              "name": "李靖",
+              "nicknames": ["托塔天王"],
+              "type": "陈塘关总兵、哪吒之父"
+            }
+          ]
+        },
+        {
+          "id": "narrative_nezha_naohai_13",
+          "name": "九湾河洗澡闹龙宫",
+          "location": "九湾河、东海龙宫",
+          "core_theme": "少年骄纵、无意识闯祸",
+          "relationship_outcome": "哪吒打死夜叉李艮、三太子敖丙，与龙族结仇",
+          "characters": [
+            {
+              "id": "character_nezha_13",
+              "name": "那吒",
+              "nicknames": ["灵珠子", "三坛海会大神"],
+              "type": "灵珠子转世、伐纣先锋官",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            },
+            {
+              "id": "character_aobing_13",
+              "name": "敖丙",
+              "nicknames": ["龙王三太子"],
+              "type": "东海龙宫三太子"
+            },
+            {
+              "id": "character_aoguang_13",
+              "name": "敖光",
+              "nicknames": ["东海龙王"],
+              "type": "东海龙王、龙族首领"
+            }
+          ]
+        },
+        {
+          "id": "narrative_taiyi_shiji_13",
+          "name": "太乙真人降伏石矶娘娘",
+          "location": "乾元山金光洞",
+          "core_theme": "师门护短、阐截教冲突",
+          "relationship_outcome": "太乙真人用九龙神火罩炼化石矶，保护哪吒",
+          "characters": [
+            {
+              "id": "character_taiyi_zhenren_13",
+              "name": "太乙真人",
+              "type": "哪吒师父、阐教仙人"
+            },
+            {
+              "id": "character_shiji_niangniang_13",
+              "name": "石矶娘娘",
+              "type": "骷髅山白骨洞截教仙人"
+            },
+            {
+              "id": "character_nezha_13",
+              "name": "那吒",
+              "nicknames": ["灵珠子", "三坛海会大神"],
+              "type": "灵珠子转世、伐纣先锋官",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            }
+          ]
+        },
+        {
+          "id": "narrative_tigu_huainfu_13",
+          "name": "哪吒剔骨割肉还父母",
+          "location": "陈塘关帅府",
+          "core_theme": "孝义两全、自我牺牲",
+          "relationship_outcome": "哪吒为不累父母自戕，了结与龙族的仇怨",
+          "characters": [
+            {
+              "id": "character_nezha_13",
+              "name": "那吒",
+              "nicknames": ["灵珠子", "三坛海会大神"],
+              "type": "灵珠子转世、伐纣先锋官",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            },
+            {
+              "id": "character_aoguang_13",
+              "name": "敖光",
+              "nicknames": ["东海龙王"],
+              "type": "东海龙王、龙族首领"
+            }
+          ]
+        },
+        {
+          "id": "narrative_lianhua_huashen_13",
+          "name": "太乙真人莲花重塑哪吒",
+          "location": "乾元山金光洞五莲池",
+          "core_theme": "重生、神体重塑",
+          "relationship_outcome": "哪吒获得莲花法身，成为没有血肉之躯的神将",
+          "characters": [
+            {
+              "id": "character_taiyi_zhenren_13",
+              "name": "太乙真人",
+              "type": "哪吒师父、阐教仙人"
+            },
+            {
+              "id": "character_nezha_13",
+              "name": "那吒",
+              "nicknames": ["灵珠子", "三坛海会大神"],
+              "type": "灵珠子转世、伐纣先锋官",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            }
+          ]
+        },
+        {
+          "id": "narrative_santou_babei_13",
+          "name": "哪吒饮仙酒得三头八臂神通",
+          "location": "乾元山金光洞",
+          "core_theme": "神力升级、战斗形态",
+          "relationship_outcome": "哪吒获得三头八臂神通和八件法宝",
+          "characters": [
+            {
+              "id": "character_taiyi_zhenren_13",
+              "name": "太乙真人",
+              "type": "哪吒师父、阐教仙人"
+            },
+            {
+              "id": "character_nezha_13",
+              "name": "那吒",
+              "nicknames": ["灵珠子", "三坛海会大神"],
+              "type": "灵珠子转世、伐纣先锋官",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            }
+          ]
+        },
+        {
+          "id": "narrative_fuzi_hejie_13",
+          "name": "燃灯道人调解父子恩怨",
+          "location": "灵鹫山、战场",
+          "core_theme": "家庭和解、天命调和",
+          "relationship_outcome": "哪吒与李靖在燃灯调解下和解，共辅周室",
+          "characters": [
+            {
+              "id": "character_nezha_13",
+              "name": "那吒",
+              "nicknames": ["灵珠子", "三坛海会大神"],
+              "type": "灵珠子转世、伐纣先锋官",
+              "homepage": "https://baike.baidu.com/item/%E9%82%A3%E5%92%A4/1223997"
+            },
+            {
+              "id": "character_lijing_13",
+              "name": "李靖",
+              "nicknames": ["托塔天王"],
+              "type": "陈塘关总兵、哪吒之父"
+            }
+          ]
+        }
+      ]
+    }
+    {
+      "id": "work_14",
+      "type": "Film",
+      "title": "《哪吒闹海》",
+      "period": "1979年",
+      "form": "手绘动画电影",
+      "people": {
+        "creator": [
+          {
+            "id": "person_wangshuchen",
+            "name": "王树忱",
+            "role": "导演"
+          },
+          {
+            "id": "person_yandingxian",
+            "name": "严定宪",
+            "role": "导演"
+          },
+          {
+            "id": "person_xujingda",
+            "name": "徐景达",
+            "role": "导演"
+          }
+        ],
+        "contributor": [
+          {
+            "id": "person_wangshuchen_bianju",
+            "name": "王树忱",
+            "role": "编剧"
+          }
+        ]
+      },
+      "manifestations": [
+        {
+          "id": "manifestation_14",
+          "edition": "宽银幕/普通银幕双版本",
+          "publication_period": "1979年",
+          "description": "手绘动画胶片制作，宽银幕/普通银幕双版本呈现"
+        }
+      ],
+      "narratives": [
+        {
+          "id": "narrative_nezha_birth_14",
+          "name": "哪吒出世",
+          "location": "",
+          "core_theme": "凸显神话角色的不凡诞生，铺垫反抗宿命",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_14",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、正义英雄"
+            },
+            {
+              "id": "character_lijing_14",
+              "name": "李靖",
+              "type": "陈塘关总兵、哪吒之父"
+            },
+            {
+              "id": "character_taiyi_zhenren_14",
+              "name": "太乙真人",
+              "type": "哪吒师父"
+            }
+          ],
+        },
+        {
+          "id": "narrative_chunao_donghai_14",
+          "name": "初闹东海",
+          "location": "",
+          "core_theme": "反抗强权压迫，守护弱小",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_14",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、正义英雄"
+            },
+            {
+              "id": "character_donghai_longwang_14",
+              "name": "东海龙王",
+              "type": "东海龙族首领、敌对势力"
+            },
+            {
+              "id": "character_aobing_14",
+              "name": "敖丙",
+              "type": "东海三太子、敌对势力"
+            }
+          ],
+        },
+        {
+          "id": "narrative_shuiyan_chentang_14",
+          "name": "水淹陈塘关",
+          "location": "",
+          "core_theme": "展现封建强权对普通百姓的欺凌",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_lijing_14",
+              "name": "李靖",
+              "type": "陈塘关总兵、哪吒之父"
+            },
+            {
+              "id": "character_sihai_longwang_14",
+              "name": "四海龙王",
+              "type": "四海龙族首领、联合复仇势力"
+            }
+          ],
+        },
+        {
+          "id": "narrative_nezha_ziwen_14",
+          "name": "哪吒自刎",
+          "location": "",
+          "core_theme": "歌颂牺牲精神与责任担当",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_14",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、正义英雄"
+            },
+            {
+              "id": "character_lijing_14",
+              "name": "李靖",
+              "type": "陈塘关总兵、哪吒之父"
+            }
+          ],
+        },
+        {
+          "id": "narrative_lianhua_sushen_14",
+          "name": "莲花塑身",
+          "location": "",
+          "core_theme": "体现神话中生命的重生与希望",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_14",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、正义英雄"
+            },
+            {
+              "id": "character_taiyi_zhenren_14",
+              "name": "太乙真人",
+              "type": "哪吒师父"
+            }
+          ],
+        },
+        {
+          "id": "narrative_danao_longgong_14",
+          "name": "大闹龙宫",
+          "location": "",
+          "core_theme": "对不公强权的终极反抗，彰显正义必胜",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_14",
+              "name": "哪吒",  
+              "type": "李靖与殷氏之子、正义英雄"
+            },
+            {
+              "id": "character_sihai_longwang_14",
+              "name": "四海龙王",
+              "type": "四海龙族首领、联合复仇势力"
+            }
+          ],
+        }
+      ]
+    },
+    {
+      "id": "work_15",
+      "type": "Film",
+      "title": "《莲花童子哪吒》",
+      "period": "1999年",
+      "form": "电视剧",
+      "people": {
+        "creator": [
+          {
+            "id": "person_yumingsheng",
+            "name": "余明生",
+            "role": "导演"
+          },
+          {
+            "id": "person_yechengkang",
+            "name": "叶成康",
+            "role": "导演"
+          }
+        ],
+        "contributor": [
+          {
+            "id": "person_lirong",
+            "name": "李容",
+            "role": "编剧"
+          },
+          {
+            "id": "person_caojun",
+            "name": "曹骏",
+            "role": "主演（饰演哪吒）"
+          },
+          {
+            "id": "person_luohaiqiong",
+            "name": "罗海琼",
+            "role": "主演"
+          }
+        ]
+      },
+      "manifestations": [
+        {
+          "id": "manifestation_15",
+          "edition": "DVD发行完整剧集",
+          "publication_period": "1999年",
+          "description": "实景拍摄结合古装神话特效，DVD发行呈现完整剧集"
+        }
+      ],
+      "narratives": [
+        {
+          "id": "narrative_lingzhu_jiangzui_15",
+          "name": "灵珠降罪",
+          "location": "",
+          "core_theme": "过错与救赎的开端，铺垫角色成长",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_15",
+              "name": "哪吒",
+              "type": "灵珠子转世、李靖三子"
+            },
+            {
+              "id": "character_jiuweihu_15",
+              "name": "九尾狐",
+              "type": "反派"
+            }
+          ],
+        },
+        {
+          "id": "narrative_naohai_tulong_15",
+          "name": "闹海屠龙",
+          "location": "",
+          "core_theme": "反抗恶势力，维护人间正义",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_15",
+              "name": "哪吒",
+              "type": "灵珠子转世、李靖三子"
+            },
+            {
+              "id": "character_aobing_15",
+              "name": "敖丙",
+              "type": "东海三太子、敌对势力"
+            }
+          ],
+        },
+        {
+          "id": "narrative_lianhua_chongsheng_15",
+          "name": "莲花重生",
+          "location": "",
+          "core_theme": "生命的二次塑造与自我救赎",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_15",
+              "name": "哪吒",
+              "type": "灵珠子转世、李靖三子"
+            },
+            {
+              "id": "character_taiyi_zhenren_15",
+              "name": "太乙真人",
+              "type": "哪吒师父"
+            }
+          ],
+        },
+        {
+          "id": "narrative_fazhou_chuyao_15",
+          "name": "伐纣除妖",
+          "location": "",
+          "core_theme": "正义战胜邪恶，顺应天道民心",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_15",
+              "name": "哪吒",
+              "type": "灵珠子转世、李靖三子"
+            },
+            {
+              "id": "character_jiuweihu_15",
+              "name": "九尾狐",
+              "type": "反派"
+            },
+            {
+              "id": "character_sudaji_15",
+              "name": "苏妲己",
+              "type": "被九尾狐附身、反派"
+            },
+            {
+              "id": "character_jiangziya_15",
+              "name": "姜子牙",
+              "type": "哪吒盟友、西岐谋士"
+            },
+            {
+              "id": "character_yangjian_work_15",
+              "name": "杨戬",
+              "type": "哪吒盟友、二郎神"
+            }
+          ],
+        }
+      ]
+    },
+    {
+      "id": "work_16",
+      "type": "Film",
+      "title": "《哪吒传奇》",
+      "period": "2003年",
+      "form": "电视动画",
+      "people": {
+        "creator": [
+          {
+            "id": "person_chenjiaqi",
+            "name": "陈家奇",
+            "role": "总导演"
+          },
+          {
+            "id": "person_caizhijun",
+            "name": "蔡志军",
+            "role": "总导演"
+          }
+        ],
+        "contributor": [
+          {
+            "id": "person_wunan",
+            "name": "吴楠",
+            "role": "编剧"
+          },
+          {
+            "id": "person_mengyao",
+            "name": "孟瑶",
+            "role": "编剧"
+          },
+          {
+            "id": "person_bianzhihong",
+            "name": "卞智洪",
+            "role": "编剧"
+          }
+        ]
+      },
+      "manifestations": [
+        {
+          "id": "manifestation_16",
+          "edition": "CCTV-1重播及网络平台流媒体",
+          "publication_period": "2003年",
+          "description": "二维电视动画制作，CCTV-1重播及网络平台流媒体呈现"
+        }
+      ],
+      "narratives": [
+        {
+          "id": "narrative_nezha_birth_16",
+          "name": "哪吒出世",
+          "location": "",
+          "core_theme": "展现偏见与误解下的生命诞生，凸显亲情守护",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_16",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、少年英雄"
+            },
+            {
+              "id": "character_lijing_16",
+              "name": "李靖",
+              "type": "哪吒之父"
+            },
+            {
+              "id": "character_yinshi_16",
+              "name": "殷氏",
+              "type": "哪吒之母"
+            },
+            {
+              "id": "character_shengongbao_16",
+              "name": "申公豹",
+              "type": "反派、纣王谋士"
+            }
+          ],
+        },
+        {
+          "id": "narrative_xuanyuanjian_16",
+          "name": "轩辕箭事件",
+          "location": "",
+          "core_theme": "少年的无畏与成人世界的强权冲突",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_16",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、少年英雄"
+            },
+            {
+              "id": "character_shengongbao_16",
+              "name": "申公豹",
+              "type": "反派、纣王谋士"
+            }
+          ],
+        },
+        {
+          "id": "narrative_huntianling_16",
+          "name": "混天绫风波",
+          "location": "",
+          "core_theme": "亲情的隔阂与自我追寻的开端",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_16",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、少年英雄"
+            },
+            {
+              "id": "character_lijing_16",
+              "name": "李靖",
+              "type": "哪吒之父"
+            },
+            {
+              "id": "character_xiaolongnv_16",
+              "name": "小龙女",
+              "type": "哪吒好友、东海龙族公主"
+            }
+          ],
+        },
+        {
+          "id": "narrative_longzhu_mengyuan_16",
+          "name": "龙珠蒙冤",
+          "location": "",
+          "core_theme": "真相与谎言的对抗，友情的考验",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_16",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、少年英雄"
+            },
+            {
+              "id": "character_jiuweihu_16",
+              "name": "九尾狐",
+              "type": "反派、附身苏妲己"
+            },
+            {
+              "id": "character_xiaolongnv_16",
+              "name": "小龙女",
+              "type": "哪吒好友、东海龙族公主"
+            }
+          ],
+        },
+        {
+          "id": "narrative_duikang_shiji_16",
+          "name": "对抗石矶",
+          "location": "",
+          "core_theme": "团结与勇气战胜邪恶，守护家园的责任",
+          "relationship_outcome": "",
+          "characters": [
+            {
+              "id": "character_nezha_16",
+              "name": "哪吒",
+              "type": "李靖与殷氏之子、少年英雄"
+            },
+            {
+              "id": "character_xiaolongnv_16",
+              "name": "小龙女",
+              "type": "哪吒好友、东海龙族公主"
+            },
+            {
+              "id": "character_shiji_16",
+              "name": "石矶",
+              "type": "终极反派、邪恶势力首领"
+            }
+          ],
+        }
+      ]
+    },
+    {
+      "id": "work_17",
+      "type": "Film",
+      "title": "《哪吒之魔童降世》",
+      "period": "2019年",
+      "form": "3D动画电影",
+      "people": {
+        "creator": [
+          {
+            "id": "person_jiaozi",
+            "name": "饺子",
+            "role": "导演"
+          }
+        ],
+        "contributor": [
+          {
+            "id": "person_lvyanting",
+            "name": "吕艳婷",
+            "role": "配音导演"
+          },
+          {
+            "id": "person_jongsensefu",
+            "name": "种森瑟夫",
+            "role": "音乐制作"
+          }
+        ]
+      },
+      "manifestations": [
+        {
+          "id": "manifestation_17",
+          "edition": "院线发行版本",
+          "publication_period": "2019年",
+          "description": "3D动画电影，院线发行呈现"
+        }
+      ],
+      "narratives": [
+        {
+          "id": "narrative_lingmo_huhuan_17",
+          "name": "灵魔互换",
+          "location": "",
+          "core_theme": "宿命的错位与命运的不公，铺垫反抗基调",
+          "relationship_outcome": "命运错位，敌对关系萌芽",
+          "characters": [
+            {
+              "id": "character_nezha_17",
+              "name": "哪吒",
+              "type": "魔丸转世、李靖之子"
+            },
+            {
+              "id": "character_lijing_17",
+              "name": "李靖",
+              "type": "哪吒之父、陈塘关守将"
+            },
+            {
+              "id": "character_yinfuren_17",
+              "name": "殷夫人",
+              "type": "哪吒之母"
+            },
+            {
+              "id": "character_shengongbao_17",
+              "name": "申公豹",
+              "type": "反派、元始天尊弟子"
+            }
+          ],
+        },
+        {
+          "id": "narrative_gudu_chengzhang_17",
+          "name": "孤独成长",
+          "location": "",
+          "core_theme": "偏见对个体的伤害，自我认同的艰难",
+          "relationship_outcome": "加深父子隔阂，师徒关系建立",
+          "characters": [
+            {
+              "id": "character_nezha_17",
+              "name": "哪吒",
+              "type": "魔丸转世、李靖之子"
+            },
+            {
+              "id": "character_lijing_17",
+              "name": "李靖",
+              "type": "哪吒之父、陈塘关守将"
+            },
+            {
+              "id": "character_yinfuren_17",
+              "name": "殷夫人",
+              "type": "哪吒之母"
+            },
+            {
+              "id": "character_taiyi_zhenren_17",
+              "name": "太乙真人",
+              "type": "哪吒师父"
+            }
+          ],
+        },
+        {
+          "id": "narrative_jieshi_aobing_17",
+          "name": "结识敖丙",
+          "location": "",
+          "core_theme": "跨越身份的友情，打破标签化的隔阂",
+          "relationship_outcome": "建立跨越身份的友情",
+          "characters": [
+            {
+              "id": "character_nezha_17",
+              "name": "哪吒",
+              "type": "魔丸转世、李靖之子"
+            },
+            {
+              "id": "character_aobing_17",
+              "name": "敖丙",
+              "type": "灵珠转世、龙族少主、哪吒好友"
+            }
+          ],
+        },
+        {
+          "id": "narrative_shengchengyan_17",
+          "name": "生辰宴危机",
+          "location": "",
+          "core_theme": "谎言与背叛下的人性抉择，亲情的伟大",
+          "relationship_outcome": "父子关系升华，敌对关系激化",
+          "characters": [
+            {
+              "id": "character_nezha_17",
+              "name": "哪吒",
+              "type": "魔丸转世、李靖之子"
+            },
+            {
+              "id": "character_lijing_17",
+              "name": "李靖",
+              "type": "哪吒之父、陈塘关守将"
+            },
+            {
+              "id": "character_shengongbao_17",
+              "name": "申公豹",
+              "type": "反派、元始天尊弟子"
+            }
+          ],
+        },
+        {
+          "id": "narrative_gongkang_tianjie_17",
+          "name": "共抗天劫",
+          "location": "",
+          "core_theme": "'我命由我不由天'，反抗宿命与偏见的核心主旨",
+          "relationship_outcome": "友谊深化，共同反抗命运",
+          "characters": [
+            {
+              "id": "character_nezha_17",
+              "name": "哪吒",
+              "type": "魔丸转世、李靖之子"
+            },
+            {
+              "id": "character_aobing_17",
+              "name": "敖丙",
+              "type": "灵珠转世、龙族少主、哪吒好友"
+            }
+          ],
+        }
+      ]
+    }
   ]
 }
